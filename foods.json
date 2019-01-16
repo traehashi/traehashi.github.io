@@ -1,0 +1,16 @@
+{
+  "food":[
+    {
+    "name":"soft shelled crab",
+    "price":32.67,
+    "quantity":2,
+    "sides":["Rice","Salad","ginger","Lomi Salmon"]
+    },
+    {
+    "name":"medium crab",
+    "price":9,
+    "quantity":0.25,
+    "sides":["tears","shame","rice"]
+    }
+  ]
+}
