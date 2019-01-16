@@ -7,10 +7,10 @@
 xmlhttp.onreadystatechange=function(){
   if(this.readyState==4&&this.status==200){
     var mydata=JSON.parse(this.responseText);
-    window.alert(mydata.name);
+    window.alert(mydata.food[1.name]i);
   }
 };
-xmlhttp.open("GET","sample.json",true);
+xmlhttp.open("GET","foods.json",true);
 xmlhttp.send();
     </script>
   </body>
