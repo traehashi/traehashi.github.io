@@ -3,7 +3,7 @@ xmlhttp.onreadystatechange=function(){
   if(this.readyState==4&&this.status==200){
     var mydata=JSON.parse(this.responseText);
       document.getElementById("food1").innerHTML=mydata.food[0].name;
-      document.getElementById("price1").innerHTML="$+mydata.food[0].price";
+      document.getElementById("price1").innerHTML="$"+mydata.food[0].price;
       document.getElementById("amount1").innerHTML=mydata.food[0].quantity;
       document.getElementById("sides1").innerHTML=mydata.food[0].sides;
         document.getElementById("food2").innerHTML=mydata.food[1].name;
