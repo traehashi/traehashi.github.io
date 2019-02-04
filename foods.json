@@ -11,6 +11,12 @@
     "price":9,
     "quantity":0.25,
     "sides":["tears","shame","rice"]
+    },
+    {
+    "name":"hard shelled crab",
+    "price":3,
+    "quantity":3,
+    "sides":["thing","thing","thing"]
     }
   ]
 }

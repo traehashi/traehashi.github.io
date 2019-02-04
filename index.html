@@ -1,17 +1,77 @@
 <html>
   <head>
+    <style>
+      body{
+        margin:0px;
+        padding:0px;
+
+      }
+      #outer{
+        width:100%;
+        height:100%;
+      }
+      .inner{
+        width:50%;
+        height:auto;
+        border-radius:1%;
+        border:solid red;
+        margin:1%;
+      }
+      .innerImg{
+        width:50%;
+        height:auto;
+        float:right;
+        margin:5%;
+        background-color:green;
+      }
+    </style>
   </head>
   <body>
-    <script>
-      var xmlhttp=new XMLHttpRequest();
-xmlhttp.onreadystatechange=function(){
-  if(this.readyState==4&&this.status==200){
-    var mydata=JSON.parse(this.responseText);
-    window.alert(mydata.food[1].name);
-  }
-};
-xmlhttp.open("GET","foods.json",true);
-xmlhttp.send();
-    </script>
+    <script src="project.js"></script>
+    <div id="outer">
+      <div class="inner">
+       <p id="food1"></p>
+       <p id="price1"></p>
+       <p id="amount1"></p>
+       <p id="sides1"></p>
+      <div class="innerImg" id="img1"></div>
+      </div>
+      <div class="inner">
+        <p id="food2"></p>
+        <p id="price2"></p>
+        <p id="amount2"></p>
+        <p id="sides2"></p>
+      <div class="innerImg" id="img2"></div>
+      </div>
+      <div class="inner">
+        <p id="food3"></p>
+        <p id="price3"></p>
+        <p id="amount3"></p>
+        <p id="sides3"></p>
+      <div class="innerImg" id="img3"></div>
+      </div>
+      <div class="inner">
+        <p id="food4"></p>
+        <p id="price4"></p>
+        <p id="amount4"></p>
+        <p id="sides4"></p>
+      <div class="innerImg" id="img4"></div>
+      </div>
+      <div class="inner">
+        <p id="food5"></p>
+        <p id="price5"></p>
+        <p id="amount5"></p>
+        <p id="sides5"></p>
+      <div class="innerImg" id="img5"></div>
+      </div>
+      <div class="inner">
+        <p id="food6"></p>
+        <p id="price6"></p>
+        <p id="amount6"></p>
+        <p id="sides6"></p>
+      <div class="innerImg" id="img6"></div>
+      </div>
+    </div>
+
   </body>
 </html>
