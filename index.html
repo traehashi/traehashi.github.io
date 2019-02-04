@@ -5,6 +5,7 @@
         margin:0px;
         padding:0px;
         background-image:url("wYjAzA9.jpg");
+        background-size:cover;
       }
       #outer{
         width:100%;
@@ -27,10 +28,14 @@
       .textinner{
         width:50%;
         height:auto;
-        margin:5%;
+        margin:1%;
       }
       #total{
         float:right;
+        width:100%;
+        height:100px;
+        background-color:white;
+        border-radius:5px;
       }
     </style>
   </head>
@@ -43,6 +48,13 @@
         <p id="price1"></p>
         <p id="amount1"></p>
         <p id="sides1"></p>
+        <select class="selector" id="option1">
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+        </select>
+        <button onclick="subt1()"></button>
         </div>
       <div class="innerImg" id="img1"></div>
       </div>
@@ -52,6 +64,12 @@
         <p id="price2"></p>
         <p id="amount2"></p>
         <p id="sides2"></p>
+        <select class="selector">
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+        </select>
         </div>
       <div class="innerImg" id="img2"></div>
       </div>
@@ -61,6 +79,12 @@
         <p id="price3"></p>
         <p id="amount3"></p>
         <p id="sides3"></p>
+        <select class="selector">
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+        </select>
         </div>
       <div class="innerImg" id="img3"></div>
       </div>
@@ -70,24 +94,49 @@
         <p id="price4"></p>
         <p id="amount4"></p>
         <p id="sides4"></p>
+        <select class="selector">
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+        </select>
         </div>
       <div class="innerImg" id="img4"></div>
       </div>
       <div class="inner">
+        <div class="textinner">
         <p id="food5"></p>
         <p id="price5"></p>
         <p id="amount5"></p>
         <p id="sides5"></p>
+        <select class="selector">
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+        </select>
+        </div>
       <div class="innerImg" id="img5"></div>
       </div>
       <div class="inner">
+        <div class="textinner">
         <p id="food6"></p>
         <p id="price6"></p>
         <p id="amount6"></p>
         <p id="sides6"></p>
+        <select class="selector">
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+        </select>
+        </div>
       <div class="innerImg" id="img6"></div>
-      <div id="total"></div>
       </div>
+            <div id="total">
+              <p id="totalPrice"></p>
+              <p id="itemslist"></p>
+            </div>
     </div>
 
   </body>

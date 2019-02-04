@@ -7,16 +7,34 @@
     "sides":["Rice","Salad","ginger","Lomi Salmon"]
     },
     {
-    "name":"medium crab",
-    "price":9,
-    "quantity":0.25,
+    "name":"medium shelled crab",
+    "price":4,
+    "quantity":2,
     "sides":["tears","shame","rice"]
     },
     {
     "name":"hard shelled crab",
     "price":3,
-    "quantity":3,
+    "quantity":2,
     "sides":["thing","thing","thing"]
+    },
+    {
+    "name":"crab shelled crab",
+    "price":20,
+    "quantity":2,
+    "sides":["Rice","Salad","ginger","Lomi Salmon"]
+    },
+    {
+    "name":"crab ice cream",
+    "price":15,
+    "quantity":2,
+    "sides":["Rice","Salad","ginger","Lomi Salmon"]
+    },
+    {
+    "name":"crabs with crabs for shells",
+    "price":12,
+    "quantity":2,
+    "sides":["Rice","Salad","ginger","Lomi Salmon"]
     }
   ]
 }
