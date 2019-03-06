@@ -1,143 +1,113 @@
 <html>
   <head>
+    <script src="p5.min.js"></script>
     <style>
       body{
-        margin:0px;
-        padding:0px;
-        background-image:url("wYjAzA9.jpg");
-        background-size:cover;
-      }
-      #outer{
-        width:100%;
-        height:100%;
-      }
-      .inner{
-        background-color:white;
-        width:50%;
-        height:auto;
-        border-radius:5px;
-        margin:1%;
-      }
-      .innerImg{
-        width:50%;
-        height:auto;
-        float:right;
-        margin:5%;
-        background-color:green;
-      }
-      .textinner{
-        width:50%;
-        height:auto;
-        margin:1%;
-      }
-      #total{
-        float:right;
-        width:100%;
-        height:100px;
-        background-color:white;
-        border-radius:5px;
+        overflow:hidden;
+        margin:0;
+        padding:0;
+
       }
     </style>
   </head>
   <body>
-    <script src="project.js"></script>
-    <div id="outer">
-      <div class="inner">
-        <div class="textinner">
-        <p id="food1"></p>
-        <p id="price1"></p>
-        <p id="amount1"></p>
-        <p id="sides1"></p>
-        <select class="selector" id="option1">
-          <option value=1>1</option>
-          <option value=2>2</option>
-          <option value=3>3</option>
-          <option value=4>4</option>
-        </select>
-        <button onclick="subt1()"></button>
-        </div>
-      <div class="innerImg" id="img1"></div>
-      </div>
-      <div class="inner">
-        <div class="textinner">
-        <p id="food2"></p>
-        <p id="price2"></p>
-        <p id="amount2"></p>
-        <p id="sides2"></p>
-        <select class="selector">
-          <option value=1>1</option>
-          <option value=2>2</option>
-          <option value=3>3</option>
-          <option value=4>4</option>
-        </select>
-        </div>
-      <div class="innerImg" id="img2"></div>
-      </div>
-      <div class="inner">
-        <div class="textinner">
-        <p id="food3"></p>
-        <p id="price3"></p>
-        <p id="amount3"></p>
-        <p id="sides3"></p>
-        <select class="selector">
-          <option value=1>1</option>
-          <option value=2>2</option>
-          <option value=3>3</option>
-          <option value=4>4</option>
-        </select>
-        </div>
-      <div class="innerImg" id="img3"></div>
-      </div>
-      <div class="inner">
-        <div class="textinner">
-        <p id="food4"></p>
-        <p id="price4"></p>
-        <p id="amount4"></p>
-        <p id="sides4"></p>
-        <select class="selector">
-          <option value=1>1</option>
-          <option value=2>2</option>
-          <option value=3>3</option>
-          <option value=4>4</option>
-        </select>
-        </div>
-      <div class="innerImg" id="img4"></div>
-      </div>
-      <div class="inner">
-        <div class="textinner">
-        <p id="food5"></p>
-        <p id="price5"></p>
-        <p id="amount5"></p>
-        <p id="sides5"></p>
-        <select class="selector">
-          <option value=1>1</option>
-          <option value=2>2</option>
-          <option value=3>3</option>
-          <option value=4>4</option>
-        </select>
-        </div>
-      <div class="innerImg" id="img5"></div>
-      </div>
-      <div class="inner">
-        <div class="textinner">
-        <p id="food6"></p>
-        <p id="price6"></p>
-        <p id="amount6"></p>
-        <p id="sides6"></p>
-        <select class="selector">
-          <option value=1>1</option>
-          <option value=2>2</option>
-          <option value=3>3</option>
-          <option value=4>4</option>
-        </select>
-        </div>
-      <div class="innerImg" id="img6"></div>
-      </div>
-            <div id="total">
-              <p id="totalPrice"></p>
-              <p id="itemslist"></p>
-            </div>
-    </div>
-
+    <script>
+    var w=window.innerWidth;
+    var h=window.innerHeight;
+    var player1=new player1();//creating a new object globally
+    var spd1=10;
+    var player2=new player2();
+    var spd2=10;
+    var d;//distance
+    var powerup1=new powerup1();
+    function setup(){
+      createCanvas(w,h);
+      img=loadImage("sun.png");
+      bg=loadImage('space.png');
+    }
+    function draw(){
+      background(bg);
+      player1.show();
+      player1.move();
+      player2.move();
+      player2.show();
+      player2.kill();
+      
+    }
+    function player1(){
+      this.x=100;
+      this.y=100;
+      this.show=function(){
+        fill(color(0,255,255));
+        ellipse(this.x,this.y,100,100);
+      }
+      this.move=function(){
+        if((keyIsDown(68))&&(this.x<w-50)){
+          //d
+          this.x+=spd1;
+        }
+        if((keyIsDown(65))&&(this.x>50)){
+          //a
+          this.x-=spd1;
+        }
+        if((keyIsDown(87))&&(this.y>50)){
+          //w
+          this.y-=spd1;
+        }
+        if((keyIsDown(83))&&(this.y<h-50)){
+          //s
+          this.y+=spd1;
+        }
+        if((keyIsDown(16))&&(spd1=10)){
+          //shift
+          spd1+=5;
+        }
+        if((keyIsDown(16)==false)&&(spd1=15)){
+          spd1-=5;
+        }
+      }
+    }
+    function player2(){
+      this.x=w-150;
+      this.y=h-150;
+      this.show=function(){
+        fill(color(230,0,230));
+        ellipse(this.x,this.y,100,100);
+      }
+      this.move=function(){
+        if((keyIsDown(76))&&(this.x<w-50)){
+          //l
+          this.x+=spd2;
+        }
+        if((keyIsDown(74))&&(this.x>50)){
+          //j
+          this.x-=spd2;
+        }
+        if((keyIsDown(73))&&(this.y>50)){
+          //i
+          this.y-=spd2;
+        }
+        if((keyIsDown(75))&&(this.y<h-50)){
+          //k
+          this.y+=spd2;
+        }
+        if((keyIsDown(191))&&(spd2=10)){
+          //shift
+          spd2+=5;
+        }
+        if((keyIsDown(191)==false)&&(spd2=15)){
+          spd2-=5;
+        }
+      }
+      this.kill=function(){
+        d=dist(this.x,this.y,player1.x,player1.y);//distance function
+        if(d<80){
+          noLoop();//stops draw function
+          window.alert("You lose");
+        }
+      }
+    }
+    
+    </script>
   </body>
 </html>
