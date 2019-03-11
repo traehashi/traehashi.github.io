@@ -37,7 +37,7 @@
       this.x=100;
       this.y=100;
       this.show=function(){
-        image(img,this.x,this.y,100,100);
+        image(img,this.x-50,this.y-50,100,100);
         noFill();
         strokeWeight(0);
         ellipse(this.x,this.y,100,100);
@@ -103,7 +103,7 @@
       }
       this.kill=function(){
         d=dist(this.x,this.y,player1.x,player1.y);//distance function
-        if(d<80){
+        if(d<100){
           noLoop();//stops draw function
           window.alert("You lose");
         }
