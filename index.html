@@ -23,6 +23,7 @@
       createCanvas(w,h);
       img=loadImage('sun.png');
       bg=loadImage('space.png');
+      moon=loadImage('moon.png');
     }
     function draw(){
       background(bg);
@@ -72,8 +73,9 @@
       this.x=w-150;
       this.y=h-150;
       this.show=function(){
-        fill(color(230,0,230));
-        strokeWeight(1);
+        img(moon,this.x-50,this.y-50,100,100);
+        noFill();
+        strokeWeight(0);
         ellipse(this.x,this.y,100,100);
       }
       this.move=function(){
