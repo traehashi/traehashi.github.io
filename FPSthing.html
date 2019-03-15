@@ -10,32 +10,47 @@
     </style>
   </head>
   <body>
+    <span id="scoreCount">0</span>
   <script>
     var w=window.innerWidth;
     var h=window.innerHeight;
-    var squbebe=new bob();
+    var bob=new bob();
     var d;
+    var score=0;
+    var timer=3600;
     function setup(){
       createCanvas(w,h);
     }
     function draw(){
       background(230);
       bob.show();
-      bob.click();
+      bob.mouseClicked();
+      document.getElementById('scoreCount').innerHTML = score;
+      bob.end();
     }
     function bob(){
-      this.x=Math.floor(Math.random()*w);
-      this.y=Math.floor(Math.random()*h);
+      this.x=Math.floor(Math.random()*(w-30));
+      this.y=Math.floor(Math.random()*(h-30));
       this.show=function(){
         fill(color(255,0,0));
         strokeWeight(0);
         rect(this.x-15,this.y-15,30,30);
       }
-      this.click=function(){
+      this.mouseClicked=function(){
         d=dist(this.x,this.y,mouseX,mouseY);
-        if((mouseClicked())&&(d<15)){
-          this.x=random(0,w-30);
-          this.y=random(0,h-30);
+        if((mouseIsPressed)&(d<15)){
+          this.x=Math.floor(Math.random()*(w-30));
+          this.y=Math.floor(Math.random()*(h-30));
+          score+=1;
+        }
+      }
+      this.end=function(){
+        if(timer>0){
+          timer-=1;
+        }
+        else{
+          noLoop();
+          window.alert("Your score was "+score);
         }
       }
     }
