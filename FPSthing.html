@@ -13,24 +13,31 @@
   <script>
     var w=window.innerWidth;
     var h=window.innerHeight;
-    var squ=new squ();
-    let r=random(0,w-30);
-    let r2=random(0,w-30);
+    var squbebe=new bob();
+    var d;
     function setup(){
       createCanvas(w,h);
     }
     function draw(){
       background(230);
-      squ.show;
+      bob.show();
+      bob.click();
     }
-    function squ(){
-      this.x=r;
-      this.y=r2;
+    function bob(){
+      this.x=Math.floor(Math.random()*w);
+      this.y=Math.floor(Math.random()*h);
       this.show=function(){
-        fill(255,0,0);
+        fill(color(255,0,0));
         strokeWeight(0);
         rect(this.x-15,this.y-15,30,30);
-      } 
+      }
+      this.click=function(){
+        d=dist(this.x,this.y,mouseX,mouseY);
+        if((mouseClicked())&&(d<15)){
+          this.x=random(0,w-30);
+          this.y=random(0,h-30);
+        }
+      }
     }
   </script>
   </body>
