@@ -5,9 +5,10 @@
     var barrier=new barrier();
       function setup(){
         createCanvas(w,h);
+        bg=loadImage("background.jpg");
       }
       function draw(){
-        background(255);
+        background(bg);
         jumper.show();
         jumper.update();
         jumper.move();
