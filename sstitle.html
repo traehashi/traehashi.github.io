@@ -1,0 +1,42 @@
+<html>
+  <head>
+        <script src="p5.min.js"></script>
+    <style>
+      body{
+        overflow:hidden;
+        margin:0;
+        padding:0;
+        background:url("Beta.png");
+        background-repeat:no-repeat;
+        background-size:cover;
+      }
+      .one{ 
+        float:left;
+        z-index:1;
+        font-size:50px;
+        font-family:verdana;
+      }
+    </style>
+  </head>
+  <body>
+      <p id="title" class="one">Minecraft Branded Ripoff of the Chrome Dinosaur Game</p>
+      <p id="directions" class="one">Press the 'A' Key to move left, Press the 'D' Key to move right, and press space to jump</p>
+      <p id="r" class="one">Press space to begin</p>
+    <script>
+        var w=window.innerWidth;
+        var h=window.innerHeight;
+        function setup(){
+        createCanvas(w,h);
+        
+        }
+        function draw(){
+            background(bg);
+        }
+      function keyPressed(){
+          if(keyCode===32){
+            location.href="ss.html";
+          }
+      }
+    </script>
+  </body>
+</html>

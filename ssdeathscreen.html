@@ -1,0 +1,40 @@
+<html>
+  <head>
+        <script src="p5.min.js"></script>
+    <style>
+      body{
+        overflow:hidden;
+        margin:0;
+        padding:0;
+        background:url("death.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+        text-align:center;
+      }
+      .one{ 
+        z-index:1;
+        font-size:50px;
+        font-family:verdana;
+      }
+    </style>
+  </head>
+  <body>
+      <p id="title" class="one">You have died</p>
+      <p id="directions" class="one">Press Space to Respawn</p>
+    <script>
+        var w=window.innerWidth;
+        var h=window.innerHeight;
+        function setup(){
+        createCanvas(w,h);
+        
+        }
+        function draw(){
+        }
+      function keyPressed(){
+          if(keyCode===32){
+            location.href="ss.html";
+          }
+      }
+    </script>
+  </body>
+</html>

@@ -4,11 +4,13 @@
     var jumper=new jumper();
     var barrier=new barrier();
     var ground=new ground();
+    var score=0;
       function setup(){
         createCanvas(w,h);
         bg=loadImage("pp4.jpg");
         cactus=loadImage("cactus.png");
         fox=loadImage("fox.png");
+        flipfox=loadImage("flipfox.png");
         sand=loadImage("sand.jpg");
       }
       function draw(){
@@ -17,12 +19,18 @@
         jumper.show();
         jumper.update();
         jumper.move();
+        jumper.death();
         barrier.show();
         barrier.grav();
-        hit=collideRectRect(barrier.x,barrier.y,50,barrier.wall,jumper.x,jumper.y,50);
+        hit=collideRectRect(barrier.x,barrier.y,barrier.widthfinal,50,jumper.x,jumper.y,50,50);
         //hitGround=collideRectRect(jumper.x,jumper.y,50,50,ground.x,ground.y,w,50);
         print(hit);
+        if(hit===true){
+          location.href="ssdeathscreen.html";
+        }
         //print(hitGround);
+        score+=1;
+        document.getElementById("score").innerHTML=score;
       }
       function jumper(){
         this.x=50;
@@ -61,10 +69,10 @@
         this.x=w+100;
         this.y=h-100;
         this.gravity=10;
-        this.wall=Math.floor(Math.random()*3);
-        this.widthfinal=this.wall*50;
+        this.wall=Math.floor(Math.random()*4);
+        this.widthfinal=Math.floor(this.wall*50);
         this.show=function(){
-          image(cactus,this.x,this.y,50,50);
+          image(cactus,this.x,this.y,this.widthfinal,50);
           noFill();
           strokeWeight(0);
           rect(this.x,this.y,this.widthfinal,50);
@@ -73,8 +81,7 @@
           this.x-=this.gravity;
           if(this.x<-100){
             this.x=w+100;
-            this.wall=Math.floor(Math.random()*h-100);
-            this.y=Math.floor(Math.random()*h);
+            this.widthfinal=Math.floor(Math.random()*4)*50;
           }
         }
       }
@@ -82,7 +89,7 @@
         this.x=0;
         this.y=h-50;
         this.show=function(){
-          image(sand,this.x,this.y,50,50);
+          image(sand,this.x,this.y,w,50);
           noFill();
           strokeWeight(0);
           rect(this.x,this.y,w,50);
