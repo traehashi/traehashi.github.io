@@ -19,7 +19,6 @@
         jumper.show();
         jumper.update();
         jumper.move();
-        jumper.death();
         barrier.show();
         barrier.grav();
         hit=collideRectRect(barrier.x,barrier.y,barrier.widthfinal,50,jumper.x,jumper.y,50,50);
