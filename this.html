@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script src="p5.min.js"></script>
+  </head>
+  <body>
+    <script>
+      var img;
+      function preload(){
+      img=leadImage("tnt.jpt");
+      }
+      function setup(){
+        createCanvas(window.innerWidth,window.innerHeight,WEBGL);
+      }
+      function draw(){
+        background(255);
+        var locX=mouseX-width/2;
+        var locY=mouseY-height/2;
+//        directionalLight(r,g,b,x,y,z);
+        directionalLight(255,120,0,-locX,-locY,-70);
+        specularMaterial(255);
+        noStroke();
+        rotateX(mouseX/100);
+        rotateY(mouseY/100);
+        texture(img);
+        box(250);
+      }
+    </script>
+  </body>
+</html>
