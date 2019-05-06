@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="p5.min.js"></script>
+  </head>
+  <body>
+    <p id="thing"></p>
+    <script>
+    var d;
+      function setup(){
+        createCanvas(window.innerWidth,window.innerHeight);
+      }
+      function draw(){
+        d=accelerationX;
+        console.log(d);
+        document.getElementById("thing").innerHTML=d;
+      }
+    </script>
+  </body>
+</html>
